@@ -1,0 +1,13 @@
+{
+  "name": "widget-to-chat-dashboard",
+  "version": "1.0.0",
+  "description": "Manager-facing analytics dashboard with Widget-to-Chat interaction",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

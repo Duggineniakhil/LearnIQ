@@ -261,10 +261,8 @@ function showChatPanel(widgetId, isSwitch) {
   // Initialize or restore message thread
   if (!state.messages[widgetId]) {
     state.messages[widgetId] = [];
-    // Render the preloaded example exchange
+    preloadExchange(widgetId); // add initial message synchronously
     renderThread(widgetId);
-    // Add preloaded question after a brief delay
-    setTimeout(() => preloadExchange(widgetId), isSwitch ? 200 : 100);
   } else {
     renderThread(widgetId);
   }
@@ -284,25 +282,16 @@ function preloadExchange(widgetId) {
     time: formatTime(new Date(Date.now() - 120000)) // 2 min ago
   };
   state.messages[widgetId].push(userMsg);
-  appendMessage(userMsg);
 
-  // Show typing, then AI response
-  setTimeout(() => {
-    const typingEl = showTyping();
-    setTimeout(() => {
-      typingEl.remove();
-      const aiMsg = {
-        type: 'ai',
-        text: widget.preloadAnswer.text,
-        chart: widget.preloadAnswer.chart,
-        tags: widget.preloadAnswer.tags,
-        time: formatTime(new Date(Date.now() - 60000)) // 1 min ago
-      };
-      state.messages[widgetId].push(aiMsg);
-      appendMessage(aiMsg);
-      scrollThreadToBottom();
-    }, 1200);
-  }, 400);
+  // Add AI response instantly
+  const aiMsg = {
+    type: 'ai',
+    text: widget.preloadAnswer.text,
+    chart: widget.preloadAnswer.chart,
+    tags: widget.preloadAnswer.tags,
+    time: formatTime(new Date(Date.now() - 60000)) // 1 min ago
+  };
+  state.messages[widgetId].push(aiMsg);
 }
 
 /* ============================================================

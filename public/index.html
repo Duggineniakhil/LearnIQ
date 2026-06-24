@@ -122,8 +122,12 @@
   </header>
 
   <!-- Main Layout -->
-  <main class="dashboard-layout" role="main">
-    <!-- Left Panel: Widgets -->
+  <main class="main-content" role="main">
+    
+    <!-- View: Dashboard -->
+    <div class="app-view active" id="view-dashboard">
+      <div class="dashboard-layout">
+        <!-- Left Panel: Widgets -->
     <aside class="left-panel" aria-label="Analytics widgets">
       <div class="panel-header">
         <div>
@@ -519,6 +523,104 @@
       </div><!-- end chat-active -->
 
     </section>
+      </div> <!-- end dashboard-layout -->
+    </div> <!-- end view-dashboard -->
+
+    <!-- View: Learners -->
+    <div class="app-view" id="view-learners">
+      <div class="mock-page">
+        <header class="mock-header">
+          <h1 class="mock-title">Learners Directory</h1>
+          <p class="mock-subtitle">Monitor individual progress across all teams.</p>
+        </header>
+        <div class="mock-table-wrap">
+          <table class="mock-table">
+            <thead>
+              <tr><th>Name</th><th>Role</th><th>Completion</th><th>Hours Logged</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="user-cell"><div class="user-av">SJ</div><span>Sarah Jenkins</span></div></td>
+                <td>Frontend Engineer</td>
+                <td><span class="mock-pct ok">92%</span></td>
+                <td>41.5h</td>
+                <td><span class="mock-status ok">On Track</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-cell"><div class="user-av warn">MR</div><span>Marcus Reed</span></div></td>
+                <td>Sales Executive</td>
+                <td><span class="mock-pct warn">61%</span></td>
+                <td>21.4h</td>
+                <td><span class="mock-status warn">Behind</span></td>
+              </tr>
+              <tr>
+                <td><div class="user-cell"><div class="user-av">EL</div><span>Emma Lin</span></div></td>
+                <td>Product Manager</td>
+                <td><span class="mock-pct ok">88%</span></td>
+                <td>39.2h</td>
+                <td><span class="mock-status ok">On Track</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- View: Courses -->
+    <div class="app-view" id="view-courses">
+      <div class="mock-page">
+        <header class="mock-header">
+          <h1 class="mock-title">Course Catalog</h1>
+          <p class="mock-subtitle">Active learning paths and completion rates.</p>
+        </header>
+        <div class="mock-grid">
+          <div class="mock-card">
+            <div class="mock-card-icon" style="background:#DBEAFE;color:#2563EB">☁️</div>
+            <h3>Cloud Architecture Basics</h3>
+            <p>Required for Engineering. 23% completion.</p>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon" style="background:#FCE7F3;color:#DB2777">📊</div>
+            <h3>Data Literacy 101</h3>
+            <p>Required for Product & Marketing. 41% completion.</p>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon" style="background:#D1FAE5;color:#059669">🔒</div>
+            <h3>Security Compliance</h3>
+            <p>Mandatory org-wide. 67% completion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View: Reports -->
+    <div class="app-view" id="view-reports">
+      <div class="mock-page">
+        <header class="mock-header">
+          <h1 class="mock-title">Generated Reports</h1>
+          <p class="mock-subtitle">Download recent team analytics reports.</p>
+        </header>
+        <div class="mock-list">
+          <div class="mock-list-item">
+            <div class="mock-file-icon">📄</div>
+            <div class="mock-file-info">
+              <h4>Q2 Performance Summary.pdf</h4>
+              <span>Generated Jun 24, 2026 • 2.4 MB</span>
+            </div>
+            <button class="mock-btn">Download</button>
+          </div>
+          <div class="mock-list-item">
+            <div class="mock-file-icon">📊</div>
+            <div class="mock-file-info">
+              <h4>Engineering Skill Gaps.csv</h4>
+              <span>Generated Jun 22, 2026 • 1.1 MB</span>
+            </div>
+            <button class="mock-btn">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <script src="app.js"></script>

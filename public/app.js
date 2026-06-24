@@ -175,8 +175,17 @@ const $rightPanel    = document.getElementById('right-panel');
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
+    // Update active nav state
     document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
     link.classList.add('active');
+
+    // Switch views
+    document.querySelectorAll('.app-view').forEach(view => view.classList.remove('active'));
+    const targetId = 'view-' + link.id.replace('nav-', '');
+    const targetView = document.getElementById(targetId);
+    if (targetView) {
+      targetView.classList.add('active');
+    }
   });
 });
 

@@ -16,7 +16,7 @@ Built as a UI design task demonstrating **Widget-to-Chat interaction design**, i
 
 ```bash
 # Clone or download the project, then:
-cd "UI Task"
+cd "LearnIQ"
 npm install
 ```
 

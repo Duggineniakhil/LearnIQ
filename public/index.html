@@ -40,12 +40,82 @@
           </svg>
           Q2 · Jun 2026
         </span>
-        <div class="team-badge">
-          <div class="team-avatar" aria-hidden="true">JM</div>
-          <span>Jordan Mills</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <polyline points="6 9 12 15 18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+        <div class="profile-menu-wrap" id="profile-menu-wrap">
+          <button class="team-badge" id="profile-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="profile-dropdown">
+            <div class="team-avatar" aria-hidden="true">A</div>
+            <span>Akhil</span>
+            <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+
+          <!-- Profile Dropdown -->
+          <div class="profile-dropdown" id="profile-dropdown" role="menu" aria-label="Profile menu" hidden>
+            <!-- Header -->
+            <div class="profile-dropdown-header">
+              <div class="profile-avatar-lg" aria-hidden="true">A</div>
+              <div class="profile-info">
+                <span class="profile-name">Akhil Duggineni</span>
+                <span class="profile-role">Learning Manager</span>
+              </div>
+            </div>
+
+            <div class="profile-divider"></div>
+
+            <!-- Stats row -->
+            <div class="profile-stats-row">
+              <div class="profile-stat">
+                <span class="profile-stat-value">150</span>
+                <span class="profile-stat-label">Learners</span>
+              </div>
+              <div class="profile-stat-sep"></div>
+              <div class="profile-stat">
+                <span class="profile-stat-value">4</span>
+                <span class="profile-stat-label">Teams</span>
+              </div>
+              <div class="profile-stat-sep"></div>
+              <div class="profile-stat">
+                <span class="profile-stat-value">Q2</span>
+                <span class="profile-stat-label">Period</span>
+              </div>
+            </div>
+
+            <div class="profile-divider"></div>
+
+            <!-- Menu items -->
+            <ul class="profile-menu-list" role="none">
+              <li role="none">
+                <a href="#" class="profile-menu-item" role="menuitem" id="menu-profile">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  My Profile
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" class="profile-menu-item" role="menuitem" id="menu-settings">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  Settings
+                </a>
+              </li>
+              <li role="none">
+                <a href="#" class="profile-menu-item" role="menuitem" id="menu-notifications">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  Notifications
+                  <span class="menu-badge">3</span>
+                </a>
+              </li>
+            </ul>
+
+            <div class="profile-divider"></div>
+
+            <ul class="profile-menu-list" role="none">
+              <li role="none">
+                <a href="#" class="profile-menu-item danger" role="menuitem" id="menu-signout">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Sign out
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

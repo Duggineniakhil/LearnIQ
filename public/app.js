@@ -322,7 +322,7 @@ function appendMessage(msg, animate = true) {
   const el = document.createElement('div');
   el.className = `message ${msg.type === 'user' ? 'user-msg' : 'ai-msg'}`;
 
-  const avatarLabel = msg.type === 'user' ? 'JM' : 'AI';
+  const avatarLabel = msg.type === 'user' ? 'A' : 'AI';
   const avatarClass = msg.type === 'user' ? 'user' : 'ai';
 
   if (msg.type === 'user') {
@@ -725,4 +725,53 @@ document.querySelectorAll('.widget').forEach((el, i) => {
     el.style.opacity = '1';
     el.style.transform = 'translateY(0)';
   }, 100 + i * 80);
+});
+
+/* ============================================================
+   PROFILE DROPDOWN TOGGLE
+   ============================================================ */
+const $profileTrigger  = document.getElementById('profile-trigger');
+const $profileDropdown = document.getElementById('profile-dropdown');
+
+function openProfileMenu() {
+  $profileDropdown.hidden = false;
+  $profileTrigger.setAttribute('aria-expanded', 'true');
+  // Re-trigger animation each open
+  $profileDropdown.style.animation = 'none';
+  $profileDropdown.offsetHeight; // reflow
+  $profileDropdown.style.animation = '';
+}
+
+function closeProfileMenu() {
+  $profileDropdown.hidden = true;
+  $profileTrigger.setAttribute('aria-expanded', 'false');
+}
+
+$profileTrigger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const isOpen = $profileTrigger.getAttribute('aria-expanded') === 'true';
+  isOpen ? closeProfileMenu() : openProfileMenu();
+});
+
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!document.getElementById('profile-menu-wrap').contains(e.target)) {
+    closeProfileMenu();
+  }
+});
+
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && $profileTrigger.getAttribute('aria-expanded') === 'true') {
+    closeProfileMenu();
+    $profileTrigger.focus();
+  }
+});
+
+// Prevent menu item clicks from bubbling and close menu
+$profileDropdown.querySelectorAll('.profile-menu-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeProfileMenu();
+  });
 });

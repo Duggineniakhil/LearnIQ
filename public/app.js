@@ -170,6 +170,17 @@ const $inputChipLabel = document.getElementById('input-chip-label');
 const $rightPanel    = document.getElementById('right-panel');
 
 /* ============================================================
+   TOP NAVIGATION
+   ============================================================ */
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+/* ============================================================
    WIDGET SELECTION
    ============================================================ */
 document.querySelectorAll('.widget').forEach(el => {
@@ -179,6 +190,19 @@ document.querySelectorAll('.widget').forEach(el => {
       e.preventDefault();
       selectWidget(el.dataset.widget);
     }
+  });
+});
+
+/* ============================================================
+   EMPTY STATE HINTS
+   ============================================================ */
+document.querySelectorAll('.hint-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    // Select first widget by default when a hint is clicked
+    selectWidget('completion');
+    $chatInput.value = chip.textContent;
+    updateSendBtn();
+    $chatInput.focus();
   });
 });
 

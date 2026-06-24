@@ -1,4 +1,8 @@
-# LearnIQ — Widget-to-Chat Dashboard
+<h1 align="center">LearnIQ — Widget-to-Chat Dashboard</h1>
+
+<p align="center">
+  <strong>Live Demo: <a href="https://learn-iq-murex.vercel.app/" target="_blank">learn-iq-murex.vercel.app</a></strong>
+</p>
 
 A manager-facing analytics dashboard that lets users click any data widget and ask AI-powered follow-up questions about that widget's data in a live chat panel.
 
@@ -35,7 +39,7 @@ Open **http://localhost:3000** in your browser.
 ## Project Structure
 
 ```
-UI Task/
+LearnIQ/
 ├── server.js           # Express server + mock AI response API
 ├── package.json
 ├── DESIGN_NOTE.md      # 5-point design decision writeup
@@ -56,10 +60,10 @@ No build step required — the server serves static files directly from `public/
 
 | Widget | Metric | Chart Type |
 |---|---|---|
-| ✅ Course Completion | 84.7% completion rate | Sparkline trend |
-| 🕐 Learning Hours | 31.4 avg hrs/week | Mini bar chart |
-| 📈 Team Performance | 82.3 avg score | Line chart with dots |
-| ⭐ Skill Coverage | 59.4% certified | Skill progress bars |
+| Course Completion | 84.7% completion rate | Sparkline trend |
+| Learning Hours | 31.4 avg hrs/week | Mini bar chart |
+| Team Performance | 82.3 avg score | Line chart with dots |
+| Skill Coverage | 59.4% certified | Skill progress bars |
 
 Each widget:
 - Shows live-style metric data with trend indicators
